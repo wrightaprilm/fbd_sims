@@ -22,17 +22,18 @@ def get_files(dataframe, index):
 	container = glob.glob(sys.argv[2])
 	for file in container:
 		print("processing file %s" % file)
-		tree = dendropy.Tree.get(path=file, schema="nexus")
-		edges = [edge.length for edge in tree.preorder_edge_iter()]
-		dataframe.append(pandas.Series(edges, index=index),ignore_index=True)
-	return(dataframe)
+		treelist = dendropy.TreeList.get(path=file, schema="nexus")
+		for tree in treelist:
+			edges = [edge.length for edge in tree.preorder_edge_iter()]
+			dataframe.append(pandas.Series(edges, index=index),ignore_index=True)
+	return(dataframe, file)
 	
 
-def io_time(dataframe):
-	dataframe.to_csv()
+def io_time(dataframe, file):
+	dataframe.to_csv('%s_edges.csv' % file)
 	
 
 if __name__ == "__main__":
 	dataframe, index = initializer()
-	export_data = get_files(dataframe, index)
-	io_time(export_data)
+	export_data, file = get_files(dataframe, index)
+	io_time(export_data, file)
