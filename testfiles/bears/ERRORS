@@ -1,0 +1,161 @@
+jardir = /home/amwright/bin/beast/lib/launcher.jar
+Checking out /home/amwright/bin/beast/lib
+Loaded URL file:/home/amwright/bin/beast/lib/beast.jar
+jardir = /home/amwright/bin/beast/lib/launcher.jarjardir = /home/amwright/bin/beast/lib/launcher.jarjardir = /home/amwright/bin/beast/lib/launcher.jarjardir = /home/amwright/bin/beast/lib/launcher.jarjardir = /home/amwright/bin/beast/lib/launcher.jarjardir = /home/amwright/bin/beast/lib/launcher.jar
+
+
+
+jardir = /home/amwright/bin/beast/lib/launcher.jar
+jardir = /home/amwright/bin/beast/lib/launcher.jarChecking out /home/amwright/bin/beast/libChecking out /home/amwright/bin/beast/libChecking out /home/amwright/bin/beast/libChecking out /home/amwright/bin/beast/lib
+
+
+Checking out /home/amwright/bin/beast/lib
+
+
+
+Checking out /home/amwright/bin/beast/lib
+
+Checking out /home/amwright/bin/beast/lib
+Checking out /home/amwright/bin/beast/libLoaded URL file:/home/amwright/bin/beast/lib/beast.jarLoaded URL file:/home/amwright/bin/beast/lib/beast.jar
+
+
+Loaded URL file:/home/amwright/bin/beast/lib/beast.jar
+Loaded URL file:/home/amwright/bin/beast/lib/beast.jar
+Loaded URL file:/home/amwright/bin/beast/lib/beast.jar
+Loaded URL file:/home/amwright/bin/beast/lib/beast.jar
+Loaded URL file:/home/amwright/bin/beast/lib/beast.jarLoaded URL file:/home/amwright/bin/beast/lib/beast.jar
+
+jardir = /home/amwright/bin/beast/lib/launcher.jar
+Checking out /home/amwright/bin/beast/lib
+Loaded URL file:/home/amwright/bin/beast/lib/beast.jar
+File: nosabears.xml seed: 1449173405776 threads: 1
+File: bears.xml seed: 1449173405820 threads: 1
+File: nosabears.xml seed: 1449173405899 threads: 1
+File: bears.xml seed: 1449173405865 threads: 1
+File: nosabears.xml seed: 1449173405968 threads: 1
+File: nosabears.xml seed: 1449173405864 threads: 1
+File: bears.xml seed: 1449173405921 threads: 1
+File: nosabears.xml seed: 1449173405933 threads: 1
+File: bears.xml seed: 1449173405932 threads: 1
+File: bears.xml seed: 1449173405995 threads: 1
+Failed to load BEAGLE library: no hmsbeagle-jni in java.library.path
+Failed to load BEAGLE library: no hmsbeagle-jni in java.library.path
+Failed to load BEAGLE library: no hmsbeagle-jni in java.library.path
+Failed to load BEAGLE library: no hmsbeagle-jni in java.library.path
+Failed to load BEAGLE library: no hmsbeagle-jni in java.library.path
+Failed to load BEAGLE library: no hmsbeagle-jni in java.library.path
+Start likelihood: -192689.62677275643 
+Failed to load BEAGLE library: no hmsbeagle-jni in java.library.path
+Failed to load BEAGLE library: no hmsbeagle-jni in java.library.path
+Failed to load BEAGLE library: no hmsbeagle-jni in java.library.path
+Failed to load BEAGLE library: no hmsbeagle-jni in java.library.path
+java.lang.RuntimeException: Initial value of origin should be greater than initial root height
+	at beast.evolution.speciation.SABirthDeathModel.initAndValidate(Unknown Source)
+	at beast.util.XMLParser.initPlugins(Unknown Source)
+	at beast.util.XMLParser.parse(Unknown Source)
+	at beast.util.XMLParser.parseFile(Unknown Source)
+	at beast.app.BeastMCMC.parseArgs(Unknown Source)
+	at beast.app.beastapp.BeastMain.main(Unknown Source)
+	at beast.app.beastapp.BeastLauncher.main(Unknown Source)
+Failed to load BEAGLE library: no hmsbeagle-jni in java.library.path
+Failed to load BEAGLE library: no hmsbeagle-jni in java.library.path
+Start likelihood: -182216.16711881568 
+Failed to load BEAGLE library: no hmsbeagle-jni in java.library.path
+Failed to load BEAGLE library: no hmsbeagle-jni in java.library.path
+Failed to load BEAGLE library: no hmsbeagle-jni in java.library.path
+Failed to load BEAGLE library: no hmsbeagle-jni in java.library.path
+Failed to load BEAGLE library: no hmsbeagle-jni in java.library.path
+Failed to load BEAGLE library: no hmsbeagle-jni in java.library.path
+Start likelihood: -163310.3588206537 
+Start likelihood: -184753.2399043624 
+Start likelihood: -183524.3857485682 
+Start likelihood: -182951.94907944748 
+Start likelihood: -183916.55443757653 
+Start likelihood: -200928.5804875911 
+Start likelihood: -159895.4261490314 
+End likelihood: -70960.2533068877
+End likelihood: -70954.29213661044
+End likelihood: -70962.97967861679
+End likelihood: -70974.95267484021
+End likelihood: -71164.58422380542
+End likelihood: -71174.5477062625
+End likelihood: -71220.07830140287
+End likelihood: -71251.11739834565
+End likelihood: -71273.5213049478
+jardir = /home/amwright/bin/beast/lib/launcher.jarjardir = /home/amwright/bin/beast/lib/launcher.jar
+
+Checking out /home/amwright/bin/beast/lib
+Checking out /home/amwright/bin/beast/lib
+Loaded URL file:/home/amwright/bin/beast/lib/beast.jar
+Loaded URL file:/home/amwright/bin/beast/lib/beast.jar
+jardir = /home/amwright/bin/beast/lib/launcher.jar
+Checking out /home/amwright/bin/beast/lib
+jardir = /home/amwright/bin/beast/lib/launcher.jar
+jardir = /home/amwright/bin/beast/lib/launcher.jarChecking out /home/amwright/bin/beast/lib
+
+Checking out /home/amwright/bin/beast/lib
+Loaded URL file:/home/amwright/bin/beast/lib/beast.jar
+Loaded URL file:/home/amwright/bin/beast/lib/beast.jar
+Loaded URL file:/home/amwright/bin/beast/lib/beast.jar
+jardir = /home/amwright/bin/beast/lib/launcher.jarjardir = /home/amwright/bin/beast/lib/launcher.jarjardir = /home/amwright/bin/beast/lib/launcher.jarjardir = /home/amwright/bin/beast/lib/launcher.jar
+
+
+
+Checking out /home/amwright/bin/beast/libChecking out /home/amwright/bin/beast/lib
+Checking out /home/amwright/bin/beast/lib
+
+Checking out /home/amwright/bin/beast/lib
+Loaded URL file:/home/amwright/bin/beast/lib/beast.jar
+Loaded URL file:/home/amwright/bin/beast/lib/beast.jar
+Loaded URL file:/home/amwright/bin/beast/lib/beast.jarLoaded URL file:/home/amwright/bin/beast/lib/beast.jar
+
+jardir = /home/amwright/bin/beast/lib/launcher.jar
+Checking out /home/amwright/bin/beast/lib
+Loaded URL file:/home/amwright/bin/beast/lib/beast.jar
+File: nosabears.xml seed: 1449203106355 threads: 1
+File: bears.xml seed: 1449203106342 threads: 1
+File: bears.xml seed: 1449203106366 threads: 1
+File: bears.xml seed: 1449203106440 threads: 1
+File: nosabears.xml seed: 1449203106410 threads: 1
+File: nosabears.xml seed: 1449203106472 threads: 1
+File: nosabears.xml seed: 1449203106449 threads: 1
+File: bears.xml seed: 1449203106505 threads: 1
+File: nosabears.xml seed: 1449203106432 threads: 1
+File: bears.xml seed: 1449203106488 threads: 1
+Failed to load BEAGLE library: no hmsbeagle-jni in java.library.path
+Failed to load BEAGLE library: no hmsbeagle-jni in java.library.path
+Failed to load BEAGLE library: no hmsbeagle-jni in java.library.path
+Failed to load BEAGLE library: no hmsbeagle-jni in java.library.path
+Failed to load BEAGLE library: no hmsbeagle-jni in java.library.path
+Failed to load BEAGLE library: no hmsbeagle-jni in java.library.path
+Failed to load BEAGLE library: no hmsbeagle-jni in java.library.path
+Failed to load BEAGLE library: no hmsbeagle-jni in java.library.path
+Failed to load BEAGLE library: no hmsbeagle-jni in java.library.path
+Failed to load BEAGLE library: no hmsbeagle-jni in java.library.path
+Start likelihood: -154481.53407565047 
+Failed to load BEAGLE library: no hmsbeagle-jni in java.library.path
+Failed to load BEAGLE library: no hmsbeagle-jni in java.library.path
+Failed to load BEAGLE library: no hmsbeagle-jni in java.library.path
+Failed to load BEAGLE library: no hmsbeagle-jni in java.library.path
+Failed to load BEAGLE library: no hmsbeagle-jni in java.library.path
+Failed to load BEAGLE library: no hmsbeagle-jni in java.library.path
+Start likelihood: -192773.48000136873 
+Failed to load BEAGLE library: no hmsbeagle-jni in java.library.path
+Start likelihood: -179121.19703427044 
+Start likelihood: -185200.29403617268 
+Failed to load BEAGLE library: no hmsbeagle-jni in java.library.path
+Failed to load BEAGLE library: no hmsbeagle-jni in java.library.path
+Start likelihood: -174214.2543663318 
+Failed to load BEAGLE library: no hmsbeagle-jni in java.library.path
+Start likelihood: -160374.286724591 
+Start likelihood: -168012.7096127 
+Start likelihood: -183633.01001993648 
+Start likelihood: -196144.305836447 
+Start likelihood: -161030.32220295604 
+End likelihood: -70986.11530913049
+End likelihood: -70957.9089028931
+End likelihood: -70941.92133791908
+End likelihood: -70940.13517065367
+End likelihood: -70982.59683042127
+End likelihood: -71154.77652013203
+End likelihood: -71176.69274967475

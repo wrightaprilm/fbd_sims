@@ -21,18 +21,6 @@ no_good_taxa = ['Parictis_montanus_33.5',
 'Ursus_abstrusus_3.55',
 'Ursus_spelaeus_0.1385']
 
-good_taxa = ['Canis_lupus_0',
-'Phoca_largha_0',
-'Ailuropoda_melanoleuca_0',
-'Tremarctos_ornatus_0',
-'Helarctos_malayanus_0',
-'Melursus_ursinus_0',
-'Ursus_americanus_0',
-'Ursus_arctos_0',
-'Ursus_thibetanus_0',
-'Ursus_maritimus_0',]
-
-#for taxon in no_good_taxa:
 tree.retain_taxa_with_labels(['Canis_lupus_0',
 'Phoca_largha_0',
 'Ailuropoda_melanoleuca_0',

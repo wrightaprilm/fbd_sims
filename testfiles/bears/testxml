@@ -1,0 +1,35 @@
+    
+#PBS  -o /ptmp/LAS/amwright/fbd_sims/testfiles/bears/output 
+#PBS  -e /ptmp/LAS/amwright/fbd_sims/testfiles/bears/ERRORS 
+
+#PBS -lnodes=1:ppn=10:compute,walltime=48:00:00
+# Change to directory from which qsub command was issued 
+module load LAS/java/1.8.0_60
+cd ~/bin/beast/bin
+./addonmanager -add BDSKY
+./addonmanager -add morph-models
+./addonmanager -add SA
+cd $PBS_O_WORKDIR
+pwd
+(cd 1
+pwd
+~/bin/beast/bin/beast bears.xml) &
+(cd 2
+~/bin/beast/bin/beast bears.xml) &
+(cd 3
+~/bin/beast/bin/beast bears.xml) &
+(cd 4
+~/bin/beast/bin/beast bears.xml) &
+(cd 5
+~/bin/beast/bin/beast bears.xml) &
+(cd 6
+pwd
+~/bin/beast/bin/beast nosabears.xml) &
+(cd 7
+~/bin/beast/bin/beast nosabears.xml) &
+(cd 8
+~/bin/beast/bin/beast nosabears.xml) &
+(cd 9
+~/bin/beast/bin/beast nosabears.xml) &
+(cd 10
+~/bin/beast/bin/beast nosabears.xml) 
