@@ -1,0 +1,39 @@
+<itsabeastystatewerein version='2.0' sample='10000000'>
+<statenode id='Tree.t:Bears_comb_aln'>(((((((((0:2.597731564092655,8:0.7477315640926552)31:3.8383603298694293,1:5.786091893962084)34:0.31643437553390363,((2:10.516570139873446,6:1.3165701398734466)30:2.0871479206882526,7:5.3537180605616985)32:0.4988082089342889)33:3.012191231866348,9:4.614717501362335)29:1.271731641316471,((3:0.32476509773069506,12:1.620765097730695)35:9.659692692591458,((((5:3.7192563379958887,(16:3.2212009966174744,20:3.2212009966174744)26:0.49805534137841434)25:0.47663708692452555,((17:0.4742605714504182,19:0.3357605714504182)23:0.2831953698192754,18:0.7574559412696936)22:3.4384374836507208)27:0.11053163621045581,10:4.30642506113087)24:5.089198149201238,15:5.845623210332108)28:1.884834579990045)36:6.105991352356654)37:4.348298976599395,4:6.734748119278201)41:6.85194528729728,14:13.77669340657548)40:4.884254490066002,(13:8.17772282645726,21:3.1777228264572592)39:8.893225070184226)38:2.75229385201834,11:2.7232417486598237)42:0.0</statenode>
+<statenode id='rateAC.s:Bears_comb_aln'>rateAC.s:Bears_comb_aln[1 1] (0.0,Infinity): 0.01989777636429915 </statenode>
+<statenode id='rateAG.s:Bears_comb_aln'>rateAG.s:Bears_comb_aln[1 1] (0.0,Infinity): 1.0566364630599343 </statenode>
+<statenode id='rateAT.s:Bears_comb_aln'>rateAT.s:Bears_comb_aln[1 1] (0.0,Infinity): 0.03441055198208684 </statenode>
+<statenode id='rateCG.s:Bears_comb_aln'>rateCG.s:Bears_comb_aln[1 1] (0.0,Infinity): 0.013692790340617824 </statenode>
+<statenode id='rateGT.s:Bears_comb_aln'>rateGT.s:Bears_comb_aln[1 1] (0.0,Infinity): 1.742158827179341E-14 </statenode>
+<statenode id='gammaShape.s:Bears_comb_aln'>gammaShape.s:Bears_comb_aln[1 1] (0.001,1000.0): 0.14405115316792652 </statenode>
+<statenode id='freqParameter.s:Bears_comb_aln'>freqParameter.s:Bears_comb_aln[4 1] (0.0,1.0): 0.3146857176412777 0.26547769478971533 0.14908891147675457 0.27074767609225203 </statenode>
+<statenode id='clockRate.c:Bears_comb_aln'>clockRate.c:Bears_comb_aln[1 1] (0.0,Infinity): 0.014117958235801692 </statenode>
+<statenode id='diversificationRateFBD.t:Bears_comb_aln'>diversificationRateFBD.t:Bears_comb_aln[1 1] (0.0,Infinity): 0.03865290180428547 </statenode>
+<statenode id='turnoverFBD.t:Bears_comb_aln'>turnoverFBD.t:Bears_comb_aln[1 1] (0.0,1.0): 0.911564438592552 </statenode>
+<statenode id='samplingProportionFBD.t:Bears_comb_aln'>samplingProportionFBD.t:Bears_comb_aln[1 1] (0.0,1.0): 0.0669636902595809 </statenode>
+<statenode id='originFBD.t:Bears_comb_aln'>originFBD.t:Bears_comb_aln[1 1] (0.0,Infinity): 49.133955479669474 </statenode>
+</itsabeastystatewerein>
+<!--
+{"operators":[
+{"id":"RateACScaler.s:Bears_comb_aln","p":0.5023964946975267,"accept":3150,"reject":9043,"acceptFC":3141,"rejectFC":9021,"rejectIv":0,"rejectOp":0},
+{"id":"RateAGScaler.s:Bears_comb_aln","p":0.6274172503433233,"accept":1523,"reject":10470,"acceptFC":1518,"rejectFC":10449,"rejectIv":0,"rejectOp":0},
+{"id":"RateATScaler.s:Bears_comb_aln","p":0.5911819949769572,"accept":2353,"reject":9451,"acceptFC":2345,"rejectFC":9438,"rejectIv":0,"rejectOp":0},
+{"id":"RateCGScaler.s:Bears_comb_aln","p":0.35680362556385886,"accept":3663,"reject":8413,"acceptFC":3655,"rejectFC":8398,"rejectIv":0,"rejectOp":0},
+{"id":"RateGTScaler.s:Bears_comb_aln","p":0.18729076495779418,"accept":4227,"reject":7742,"acceptFC":4220,"rejectFC":7731,"rejectIv":0,"rejectOp":0},
+{"id":"gammaShapeScaler.s:Bears_comb_aln","p":0.747917031299026,"accept":1599,"reject":10333,"acceptFC":1594,"rejectFC":10319,"rejectIv":0,"rejectOp":0},
+{"id":"FrequenciesExchanger.s:Bears_comb_aln","p":0.01730577747502211,"accept":2364,"reject":9596,"acceptFC":2350,"rejectFC":9582,"rejectIv":0,"rejectOp":0},
+{"id":"StrictClockRateScaler.c:Bears_comb_aln","p":0.8588077234462129,"accept":81513,"reject":276650,"acceptFC":81429,"rejectFC":276078,"rejectIv":0,"rejectOp":0},
+{"id":"strictClockUpDownOperator.c:Bears_comb_aln","p":0.7003191760602495,"accept":14076,"reject":344106,"acceptFC":14037,"rejectFC":343438,"rejectIv":313863,"rejectOp":204304},
+{"id":"originScalerFBD.t:Bears_comb_aln","p":0.7197288393792649,"accept":81986,"reject":277355,"acceptFC":81781,"rejectFC":276833,"rejectIv":109534,"rejectOp":0},
+{"id":"divRateScalerFBD.t:Bears_comb_aln","p":0.39619958847265524,"accept":296125,"reject":899444,"acceptFC":294711,"rejectFC":898635,"rejectIv":0,"rejectOp":0},
+{"id":"turnoverScalerFBD.t:Bears_comb_aln","p":0.8276167071077034,"accept":171915,"reject":1022237,"acceptFC":171733,"rejectFC":1020088,"rejectIv":317330,"rejectOp":316731},
+{"id":"samplingPScalerFBD.t:Bears_comb_aln","p":0.26572854901274273,"accept":313571,"reject":882163,"acceptFC":311712,"rejectFC":881696,"rejectIv":542,"rejectOp":537},
+{"id":"LeafToSAFBD.t:Bears_comb_aln","p":"NaN","accept":0,"reject":0,"acceptFC":0,"rejectFC":0,"rejectIv":0,"rejectOp":0},
+{"id":"WilsonBaldingFBD.t:Bears_comb_aln","p":"NaN","accept":160915,"reject":2228805,"acceptFC":160592,"rejectFC":2224590,"rejectIv":1869036,"rejectOp":510687},
+{"id":"SAWideFBD.t:Bears_comb_aln","p":"NaN","accept":0,"reject":0,"acceptFC":0,"rejectFC":0,"rejectIv":0,"rejectOp":0},
+{"id":"SANarrowFBD.t:Bears_comb_aln","p":"NaN","accept":0,"reject":0,"acceptFC":0,"rejectFC":0,"rejectIv":0,"rejectOp":0},
+{"id":"SAUniformOperatorFBD.t:Bears_comb_aln","p":"NaN","accept":1336669,"reject":1050630,"acceptFC":1334173,"rejectFC":1048602,"rejectIv":0,"rejectOp":0},
+{"id":"SATreeRootScalerFBD.t:Bears_comb_aln","p":0.7763639634522488,"accept":20661,"reject":98435,"acceptFC":20532,"rejectFC":98354,"rejectIv":87965,"rejectOp":42157},
+{"id":"SATreeScalerFBD.t:Bears_comb_aln","p":0.9117355650473777,"accept":52188,"reject":306630,"acceptFC":52059,"rejectFC":306104,"rejectIv":215664,"rejectOp":143379}
+]}
+-->
