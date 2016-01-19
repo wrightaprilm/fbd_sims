@@ -1,0 +1,6 @@
+for file in P1P518/*.phy
+	python xml_parsing.py P1P518/7.w.tre $file
+	paste dna_blockfront.xml dna.xml dna_blockback.xml >out
+	paste morph_blockfront.xml morph_matrix morph_blockback.xml > morph_out
+	cat block1.xml out morph_out block2.xml taxa.xml param.xml sa_ops.xml > $file.sa.xml	
+	cat block1.xml out morph_out block2.xml taxa.xml param.xml nosa_ops.xml > $file.nosa.xml
