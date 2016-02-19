@@ -15,7 +15,7 @@ def initializer():
 	tree.resolve_polytomies()
 	for node in tree.preorder_node_iter():
 			if node.annotations:
-				agehpd.append(node.annotations['age_median'].value)				 			
+				agehpd.append(node.annotations['age_median'].value)			 			
 			else:
 				agehpd.append('0.0')	
 #Start a pandas dataframe
@@ -57,21 +57,19 @@ def get_ages(trees, dataframe, index, agedf):
 			if node.annotations:
 				agemed.append(node.annotations['age_median'].value)
 			else:
-				agemed.append(0)	
+				agemed.append(0)
+		diffs = []				
 		for age, med in zip(agemed, agedf): 
-			diffs = []
-			diff = float(age) - float(med)
-			diffs.append(diff)			
+			diffs.append(float(age) - float(med))
 		med = pandas.Series(diffs, index=index)
 		ageout = ageout.append(med, ignore_index=True)	
-		individ_widths = []	
 
+		individ_widths = []	
 		for item in agehpd:
 			new = float(item[1]) - float(item[0])
 			individ_widths.append(new)
 		wdths = pandas.Series(individ_widths, index=index)
 		wd = wd.append(wdths, ignore_index=True)
-		print wd
 	return(dataframe, file, agehpd, ageout, wd)
 
 def comparisons(dataframe, hpds, index):
@@ -87,15 +85,11 @@ def comparisons(dataframe, hpds, index):
 	
 	print('Successes:', int(len(successes))/float(len(index)))
 
-
 def io_time(dataframe, diff_frame, width_frame):
 	name = sys.argv[3]
 	dataframe.to_csv('%s_edges.csv' % name)
 	diff_frame.to_csv('%s_diffs.csv' % name)
 	width_frame.to_csv('%s_widths.csv' % name)
-
-
-
 
 if __name__ == "__main__":
 	dataframe, index, comp_tree, agedf = initializer()
