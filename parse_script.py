@@ -23,7 +23,6 @@ def initializer():
 #Use the correct edges as the header
 	cols = df.columns
 #And also the first row
-	df.append(pandas.Series(agehpd, index=cols),ignore_index=True)
 	return(df, cols, tree, agehpd)
 
 def get_files():
@@ -39,11 +38,12 @@ def get_files():
 	return(trees)
 	
 def get_ages(trees, dataframe, index, agedf):	
-	
+	wd = dataframe.copy()
+	ageout = dataframe.copy()
 	for tree in trees:
 		agehpd = []
-		individ_widths = []	
 		wdths = []	
+
 		for node in tree.preorder_node_iter():
 			if node.annotations:
 				agehpd.append(node.annotations['age_hpd95'].value)
@@ -51,29 +51,28 @@ def get_ages(trees, dataframe, index, agedf):
 				agehpd.append([0,0])
 		s2 = pandas.Series(agehpd, index=index)
 		dataframe = dataframe.append(s2, ignore_index=True)
-		for item in agehpd:
-			if type(item) == list:
-				individ_widths.append((float(item[0]) - float(item[1])))
-			wdths.append(individ_widths)
-		wd = pandas.DataFrame(wdths)		
 
-	for tree in trees:
 		agemed = []
-		tree.resolve_polytomies()
 		for node in tree.preorder_node_iter():
 			if node.annotations:
 				agemed.append(node.annotations['age_median'].value)
 			else:
 				agemed.append(0)	
-
-	for age, med in zip(agemed, agedf): 
-		diffs = []
-		diff = float(age) - float(med)
-		diffs.append(diff)			
+		for age, med in zip(agemed, agedf): 
+			diffs = []
+			diff = float(age) - float(med)
+			diffs.append(diff)			
 		med = pandas.Series(diffs, index=index)
-	datamed = dataframe.append(med, ignore_index=True)		
-		
-	return(dataframe, file, agehpd, datamed, wd)
+		ageout = ageout.append(med, ignore_index=True)	
+		individ_widths = []	
+
+		for item in agehpd:
+			new = float(item[1]) - float(item[0])
+			individ_widths.append(new)
+		wdths = pandas.Series(individ_widths, index=index)
+		wd = wd.append(wdths, ignore_index=True)
+		print wd
+	return(dataframe, file, agehpd, ageout, wd)
 
 def comparisons(dataframe, hpds, index):
 	successes = []
@@ -94,6 +93,7 @@ def io_time(dataframe, diff_frame, width_frame):
 	dataframe.to_csv('%s_edges.csv' % name)
 	diff_frame.to_csv('%s_diffs.csv' % name)
 	width_frame.to_csv('%s_widths.csv' % name)
+
 
 
 
