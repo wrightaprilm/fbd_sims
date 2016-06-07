@@ -7,6 +7,9 @@
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
  \usepackage{subfiles}
+ \usepackage{bm}
+\usepackage{graphicx}
+ \usepackage{relsize}
 \setbeamertemplate{caption}{\insertcaption}
   \setbeamertemplate{navigation symbols}{}
   \setbeamertemplate{caption}[numbered]
@@ -16,7 +19,7 @@
 \begin{document}
  \graphicspath{{images/}}
 
-\title{Innappropriate parameterzation of fossilized birth-death models causes incorrect estimates of topology and node ages}
+\title{Innappropriate parameterzation of fossilized birth-death models causes incorrect estimates of node ages}
 \author{April M. Wright \\ Tracy A. Heath}
 \date{Today}
 \maketitle
@@ -53,8 +56,6 @@ Parameter & Meaning \\
 \end{tabular}
 \end{center}
 \end{frame}
-
-
 
 \begin{frame}
 \frametitle{Fossilized Birth-Death Process}
@@ -111,6 +112,17 @@ Parameter & Meaning \\
 \item Treat fossil and molecular data as part of the same process 
 \begin{itemize}
 	\item Avoid calibration densities 
+\end{itemize}	
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Fossilized Birth-Death Process}
+\begin{itemize}
+\item A probabilistic model for estimating divergence times
+\item Treat fossil and molecular data as part of the same process 
+\begin{itemize}
+	\item Avoid calibration densities 
 	\item Use multiple fossils per node
 \end{itemize}	
 \end{itemize}
@@ -143,6 +155,16 @@ Parameter & Meaning \\
 \end{frame}
 
 \begin{frame}
+\frametitle{Sampled ancestor models}
+\begin{figure}
+\includegraphics[scale=1]{images/SA} \\
+Gavryushkina et al. 2014, PLoS Computational Biology
+\end{figure}
+\end{frame}
+
+
+
+\begin{frame}
 \frametitle{Divergence Dating and Reasonable Ages}
 \end{frame}
 
@@ -165,25 +187,83 @@ Parameter & Meaning \\
 Is this an inherent property of 'total-evidence' approaches, or is this related to model misspecification?
 \end{frame}
 
+
+
 \begin{frame}
 \frametitle{Our Research Question}
-Sampled ancestor models
 \begin{figure}
-Low turnover, high sampling  \\
-Few sampled ancestors \\
-\lambda   \mu   \psi   \rho \\
-\includegraphics[scale=0.4]{images/HighTurnHighSamplog.png}
+\includegraphics[scale=1]{images/SA} \\
+Gavryushkina et al. 2014, PLoS Computational Biology
 \end{figure}
 \end{frame}
 
 \begin{frame}
 \frametitle{Our Research Question}
-Sampled ancestor models
+\begin{figure}
+\includegraphics[scale=.25]{images/OneBranch} \\
+No Sampled Ancestors Model
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Our Research Question}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\includegraphics[scale=.25]{images/OneBranch} \\
+\end{column}
+\begin{column}{0.5\textwidth}
+\begin{center}
+No Sampled \\ Ancestors Model \\
+\[ \mathlarger{\boldsymbol{\mu}} \\
+\rho \\
+\lambda \\
+ \psi \]
+\end{center}
+\end{column}
+\end{columns}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Our Research Question}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\includegraphics[scale=.95]{images/5sa} \\
+\end{column}
+\begin{column}{0.5\textwidth}
+\begin{center}
+Sampled \\ Ancestors Model \\
+\[\mu \\
+\rho \\
+\lambda \\
+ \psi \]
+\end{center}
+\end{column}
+\end{columns}
 \end{frame}
 
 \begin{frame}
 \frametitle{Our Research Question}
-Sampled ancestor models
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\includegraphics[scale=.25]{images/FiveBranch} \\
+\end{column}
+\begin{column}{0.5\textwidth}
+\begin{center}
+Sampled \\ Ancestors Model \\
+\[\mathlarger{\mathlarger{\mathlarger{\boldsymbol{\mu}}}}\\
+\rho \\
+\lambda \\
+ \psi \]
+\end{center}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Turnover slide}
 \end{frame}
 
 \begin{frame}
@@ -203,7 +283,7 @@ Sampled ancestor models
 \item Simulations
 \begin{itemize}
 \item 25 extant tips with nucleotide sequence data
-\item Variable number of fossil tips, with missing data
+\item Variable number of fossil tips, without data
 \end{itemize}
 \end{itemize}
 \end{frame}
@@ -214,9 +294,22 @@ Sampled ancestor models
 \item Simulations
 \begin{itemize}
 \item 25 extant tips with nucleotide sequence data
-\item Variable number of fossil tips, with missing data
-\item Simulate different values for \lambda, \mu ,  \psi
+\item Variable number of fossil tips, without data
+\item Simulate different trees and fossils with values for \lambda, \mu ,  \psi
 \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Methods}
+\begin{itemize}
+\item Simulations
+\begin{itemize}
+\item 25 extant tips with nucleotide sequence data
+\item Variable number of fossil tips, without data
+\item Simulate different trees and fossils with values for \lambda, \mu ,  \psi
+\end{itemize}
+\item Strict molecular clock for sequence data
 \end{itemize}
 \end{frame}
 
@@ -244,93 +337,94 @@ Sampled ancestor models
 \begin{center}
 \begin{figure}
 Low turnover, low sampling  \\
-Few sampled ancestors \\
-\lambda   \mu   \psi   \rho \\
+20\% of fossils are sampled ancestors \\
+\mathlarger{\mu} \lambda  \psi   \rho \\
 \includegraphics[scale=0.4]{images/LowTurnLowSampnodes.png}
 \end{figure}
 \end{center}
 \end{frame}
 
-\begin{frame}
-\begin{center}
-\begin{figure}
-Low turnover, low sampling  \\
-Few sampled ancestors \\
-\lambda   \mu   \psi   \rho \\
-\includegraphics[scale=0.4]{images/LowTurnLowSamplog.png}
-\end{figure}
-\end{center}
-\end{frame}
-
 
 \begin{frame}
 \frametitle{Results}
 \begin{center}
 \begin{figure}
 Low turnover, high sampling  \\
-Few sampled ancestors \\
-\lambda   \mu   \psi   \rho \\
+77\% of fossils are sampled ancestors \\
+\boldsymbol{\mu} \lambda  \psi   \rho \\
 \includegraphics[scale=0.4]{images/LowTurnHighSampnodes.png}
 \end{figure}
 \end{center}
 \end{frame}
 
-\begin{frame}
-\frametitle{Results}
-\begin{center}
-\begin{figure}
-Low turnover, high sampling  \\
-Few sampled ancestors \\
-\lambda   \mu   \psi   \rho \\
-\includegraphics[scale=0.4]{images/LowTurnHighSamplog.png}
-\end{figure}
-\end{center}
-\end{frame}
 
 \begin{frame}
 \begin{center}
 \begin{figure}
 High turnover, low sampling  \\
-Few sampled ancestors \\
-\lambda   \mu   \psi   \rho \\
+62\% of fossils are sampled ancestors \\
+\mathlarger{\mathlarger{\mu}} \lambda   \psi   \rho \\
 \includegraphics[scale=0.4]{images/HighTurnLowSampnodes.png}
 \end{figure}
 \end{center}
 \end{frame}
 
-\begin{frame}
-\frametitle{Results}
-\begin{center}
-\begin{figure}
-Low turnover, high sampling  \\
-Few sampled ancestors \\
-\lambda   \mu   \psi   \rho \\
-\includegraphics[scale=0.4]{images/HighTurnLowSamplog.png}
-\end{figure}
-\end{center}
-\end{frame}
-
-\begin{frame}
-\begin{center}
-\begin{figure}
-High turnover, low sampling  \\
-Few sampled ancestors \\
-\lambda   \mu   \psi   \rho \\
-\includegraphics[scale=0.4]{images/HighTurnHighSampnodes.png}
-\end{figure}
-\end{center}
-\end{frame}
 
 \begin{frame}
 \frametitle{Results}
 \begin{center}
 \begin{figure}
-Low turnover, high sampling  \\
-Few sampled ancestors \\
-\lambda   \mu   \psi   \rho \\
-\includegraphics[scale=0.4]{images/HighTurnHighSamplog.png}
+High turnover, high sampling  \\
+82\% of fossils are sampled ancestors \\
+\mathlarger{\mathlarger{\mathlarger{\boldsymbol{\mu}}}} \lambda  \psi   \rho \\
+\includegraphics[scale=0.4]{images/HighTurnHighSampnodes}
 \end{figure}
 \end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Results - Empirical}
+\includegraphics[scale=.3]{images/Combined}
+\end{frame}
+
+\begin{frame}
+\frametitle{Results - Empirical}
+\includegraphics[scale=.5]{images/SACount}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Conclusions}
+Modeling datasets with sampled ancestors using a non-sampled ancestor model may result in older node age estimates
+\end{frame}
+
+\begin{frame}
+\frametitle{Conclusions}
+Modeling datasets with sampled ancestors using a non-sampled ancestor model may result in older node ages estimates
+\begin{itemize}
+\item The effect increases with the number of sampled ancestors
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Conclusions}
+Modeling datasets with sampled ancestors using a non-sampled ancestor model may result in older node ages estimates
+\begin{itemize}
+\item The effect increases with the number of sampled ancestors
+\item The presence of sampled ancestors becomes more likely as turnover increases
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Conclusions}
+Modeling datasets with sampled ancestors using a non-sampled ancestor model may result in older node ages estimates
+\begin{itemize}
+\item The effect increases with the number of sampled ancestors
+\item The presence of sampled ancestors becomes more likely as turnover increases
+\end{itemize}
+
+
 \end{frame}
 
 
