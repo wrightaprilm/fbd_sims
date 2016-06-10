@@ -19,21 +19,11 @@
 \begin{document}
  \graphicspath{{images/}}
 
-\title{Innappropriate parameterzation of fossilized birth-death models causes incorrect estimates of node ages}
-\author{April M. Wright \\ Tracy A. Heath}
-\date{Today}
+\title{Innappropriate parameterization of fossilized birth-death models causes incorrect estimates of node ages}
+\author{April M. Wright \dag \ddag \\ Tracy A. Heath \dag}
+\institute{\dag Iowa State University,  \ddag University of Kansas}
+\date{6.19.2016}
 \maketitle
-
-\begin{frame}
-\frametitle{Outline}
-\begin{itemize}
-\item Overview: The Fossilized-Birth Death Process
-\item Our Research Question
-\item Methods
-\item Results
-\end{itemize}
-\end{frame}
-
 
 \begin{frame}
 \frametitle{Fossilized Birth-Death Process}
@@ -48,30 +38,91 @@
 
 \begin{frame}
 \frametitle{Fossilized Birth-Death Process}
-\begin{center}
-\begin{tabular}{ l  | r }
-Parameter & Meaning \\
-\hline 
-\lambda & Speciation Rate 
-\end{tabular}
-\end{center}
+\begin{itemize}
+\item A probabilistic model for estimating divergence times
+\item Treat fossil and molecular occurrence times as part of the same process
+\end{itemize}
 \end{frame}
 
 \begin{frame}
 \frametitle{Fossilized Birth-Death Process}
-\begin{center}
+\begin{itemize}
+\item A probabilistic model for estimating divergence times
+\item Treat fossil and molecular occurrence as part of the same process 
+\begin{itemize}
+	\item Avoid calibration densities 
+\end{itemize}	
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Fossilized Birth-Death Process}
+\begin{itemize}
+\item A probabilistic model for estimating divergence times
+\item Treat fossil and molecular occurrence as part of the same process 
+\begin{itemize}
+	\item Avoid calibration densities 
+	\item Use multiple fossils per node
+\end{itemize}	
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Fossilized Birth-Death Process}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\includegraphics[scale=.25]{images/CleanCopy_graphical} \\
+\end{column}
+\begin{column}{0.4\textwidth}
+\begin{tabular}{ l  | r }
+Parameter & Meaning \\
+\hline 
+\end{tabular}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Fossilized Birth-Death Process}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\includegraphics[scale=.25]{images/Lambdahighlight} \\
+\end{column}
+\begin{column}{0.4\textwidth}
+\begin{tabular}{ l  | r }
+Parameter & Meaning \\
+\hline 
+\lambda & Speciation Rate
+\end{tabular}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Fossilized Birth-Death Process}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\includegraphics[scale=.25]{images/muhighlight} \\
+\end{column}
+\begin{column}{0.4\textwidth}
 \begin{tabular}{ l  | r }
 Parameter & Meaning \\
 \hline 
 \lambda & Speciation Rate \\
 \mu & Extinction Rate \\ 
 \end{tabular}
-\end{center}
+\end{column}
+\end{columns}
 \end{frame}
 
 \begin{frame}
 \frametitle{Fossilized Birth-Death Process}
-\begin{center}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\includegraphics[scale=.25]{images/psilight} \\
+\end{column}
+\begin{column}{0.4\textwidth}
 \begin{tabular}{ l  | r }
 Parameter & Meaning \\
 \hline 
@@ -79,13 +130,18 @@ Parameter & Meaning \\
 \mu & Extinction Rate \\ 
 \psi & Paleo Sampling\\
 \end{tabular}
-\end{center}
+\end{column}
+\end{columns}
 
 \end{frame}
 
 \begin{frame}
 \frametitle{Fossilized Birth-Death Process}
-\begin{center}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\includegraphics[scale=.25]{images/rhohighlight} \\
+\end{column}
+\begin{column}{0.4\textwidth}
 \begin{tabular}{ l  | r }
 Parameter & Meaning \\
 \hline 
@@ -94,26 +150,20 @@ Parameter & Meaning \\
 \psi & Paleo Sampling\\
 \rho & Extant Sampling \\
 \end{tabular}
-\end{center}
+\end{column}
+\end{columns}
 \end{frame}
 
 \begin{frame}
 \frametitle{Fossilized Birth-Death Process}
-\begin{itemize}
-\item A probabilistic model for estimating divergence times
-\item Treat fossil and molecular data as part of the same process
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{Fossilized Birth-Death Process}
-\begin{itemize}
-\item A probabilistic model for estimating divergence times
-\item Treat fossil and molecular data as part of the same process 
-\begin{itemize}
-	\item Avoid calibration densities 
-\end{itemize}	
-\end{itemize}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\includegraphics[scale=.25]{images/turnhighlight} \\
+\end{column}
+\begin{column}{0.5\textwidth}
+\[Turnover = \mu/\lambda \]
+\end{column}
+\end{columns}
 \end{frame}
 
 \begin{frame}
@@ -124,7 +174,8 @@ Parameter & Meaning \\
 \begin{itemize}
 	\item Avoid calibration densities 
 	\item Use multiple fossils per node
-\end{itemize}	
+\end{itemize}
+\item Account for presence of lineages which have sampled descendants	
 \end{itemize}
 \end{frame}
 
@@ -137,28 +188,15 @@ Parameter & Meaning \\
 	\item Avoid calibration densities 
 	\item Use multiple fossils per node
 \end{itemize}
-\item Allow ancestors to be sampled 	
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{Fossilized Birth-Death Process}
-\begin{itemize}
-\item A probabilistic model for estimating divergence times
-\item Treat fossil and molecular data as part of the same process 
-\begin{itemize}
-	\item Avoid calibration densities 
-	\item Use multiple fossils per node
-\end{itemize}
-\item \textbf{Allow ancestors to be sampled}	
+\item \textbf{Account for presence of lineages which have sampled descendants}	
 \end{itemize}
 \end{frame}
 
 \begin{frame}
 \frametitle{Sampled ancestor models}
 \begin{figure}
-\includegraphics[scale=1]{images/SA} \\
-Gavryushkina et al. 2014, PLoS Computational Biology
+\includegraphics[scale=.25]{images/SA} \\
+Image: Stadler 2010, Journal of Theoretical Biology
 \end{figure}
 \end{frame}
 
@@ -187,13 +225,11 @@ Gavryushkina et al. 2014, PLoS Computational Biology
 Is this an inherent property of 'total-evidence' approaches, or is this related to model misspecification?
 \end{frame}
 
-
-
 \begin{frame}
 \frametitle{Our Research Question}
 \begin{figure}
-\includegraphics[scale=1]{images/SA} \\
-Gavryushkina et al. 2014, PLoS Computational Biology
+\includegraphics[scale=.25]{images/SA} \\
+Image: Stadler 2010, Journal of Theoretical Biology
 \end{figure}
 \end{frame}
 
@@ -210,34 +246,37 @@ No Sampled Ancestors Model
 \frametitle{Our Research Question}
 \begin{columns}
 \begin{column}{0.5\textwidth}
-\includegraphics[scale=.25]{images/OneBranch} \\
+\includegraphics[scale=.25]{images/OneBranchSolo} \\
 \end{column}
 \begin{column}{0.5\textwidth}
 \begin{center}
 No Sampled \\ Ancestors Model \\
-\[ \mathlarger{\boldsymbol{\mu}} \\
+\[ \mathlarger{\boldsymbol{\lambda}} \\
 \rho \\
-\lambda \\
+\mu \\
  \psi \]
 \end{center}
 \end{column}
 \end{columns}
-
 \end{frame}
 
+\begin{frame}
+\frametitle{Our Research Question}
+\includegraphics[scale=.25]{images/5sa} \\
+\end{frame}
 
 \begin{frame}
 \frametitle{Our Research Question}
 \begin{columns}
 \begin{column}{0.5\textwidth}
-\includegraphics[scale=.95]{images/5sa} \\
+\includegraphics[scale=.25]{images/FiveBranch} \\
 \end{column}
 \begin{column}{0.5\textwidth}
 \begin{center}
 Sampled \\ Ancestors Model \\
-\[\mu \\
+\[\lambda \\
 \rho \\
-\lambda \\
+\mu \\
  \psi \]
 \end{center}
 \end{column}
@@ -253,9 +292,9 @@ Sampled \\ Ancestors Model \\
 \begin{column}{0.5\textwidth}
 \begin{center}
 Sampled \\ Ancestors Model \\
-\[\mathlarger{\mathlarger{\mathlarger{\boldsymbol{\mu}}}}\\
+\[\mathlarger{\mathlarger{\mathlarger{\boldsymbol{\lambda}}}}\\
 \rho \\
-\lambda \\
+\mu \\
  \psi \]
 \end{center}
 \end{column}
@@ -263,7 +302,9 @@ Sampled \\ Ancestors Model \\
 \end{frame}
 
 \begin{frame}
-\frametitle{Turnover slide}
+\frametitle{Turnover}
+\includegraphics[scale=.4]{images/prob_ancs} \\
+
 \end{frame}
 
 \begin{frame}
@@ -318,7 +359,7 @@ Sampled \\ Ancestors Model \\
 \begin{itemize}
 \item Empirical Data
 \begin{itemize}
-\item Bear data set of Heath et al. 2014.
+\item Bear data set of Krause, 2008; Abella, 2012.
 \end{itemize}
 \end{itemize}
 \end{frame}
@@ -336,47 +377,72 @@ Sampled \\ Ancestors Model \\
 \begin{frame}
 \begin{center}
 \begin{figure}
+\frametitle{Results -  Simulations}
 Low turnover, low sampling  \\
 20\% of fossils are sampled ancestors \\
-\mathlarger{\mu} \lambda  \psi   \rho \\
-\includegraphics[scale=0.4]{images/LowTurnLowSampnodes.png}
+\boldsymbol{\lambda} \mu \psi   \rho \\
+\includegraphics[scale=0.4]{images/LowTurnLowSampnodes}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\begin{figure}
+\frametitle{Results -  Simulations}
+Low turnover, low sampling  \\
+20\% of fossils are sampled ancestors \\
+\boldsymbol{\lambda} \mu \psi   \rho \\
+\includegraphics[scale=0.4]{images/LowTurnLowSamp}
 \end{figure}
 \end{center}
 \end{frame}
 
 
 \begin{frame}
-\frametitle{Results}
+\frametitle{Results -  Simulations}
+\begin{center}
+\begin{figure}
+High turnover, low sampling  \\
+62\% of fossils are sampled ancestors \\
+\mathlarger{\mathlarger{\lambda}} \mu   \psi   \rho \\
+Rerunning.
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Results -  Simulations}
 \begin{center}
 \begin{figure}
 Low turnover, high sampling  \\
 77\% of fossils are sampled ancestors \\
-\boldsymbol{\mu} \lambda  \psi   \rho \\
+\boldsymbol{\lambda} \mu  \psi   \rho \\
 \includegraphics[scale=0.4]{images/LowTurnHighSampnodes.png}
 \end{figure}
 \end{center}
 \end{frame}
 
-
 \begin{frame}
+\frametitle{Results -  Simulations}
 \begin{center}
 \begin{figure}
-High turnover, low sampling  \\
-62\% of fossils are sampled ancestors \\
-\mathlarger{\mathlarger{\mu}} \lambda   \psi   \rho \\
-\includegraphics[scale=0.4]{images/HighTurnLowSampnodes.png}
+Low turnover, high sampling  \\
+77\% of fossils are sampled ancestors \\
+\boldsymbol{\lambda} \mu  \psi   \rho \\
+\includegraphics[scale=0.4]{images/LowTurnHighSamplog}
 \end{figure}
 \end{center}
 \end{frame}
 
 
 \begin{frame}
-\frametitle{Results}
+\frametitle{Results -  Simulations}
 \begin{center}
 \begin{figure}
 High turnover, high sampling  \\
 82\% of fossils are sampled ancestors \\
-\mathlarger{\mathlarger{\mathlarger{\boldsymbol{\mu}}}} \lambda  \psi   \rho \\
+\mathlarger{\mathlarger{\mathlarger{\boldsymbol{\lambda}}}} \mu \psi   \rho \\
 \includegraphics[scale=0.4]{images/HighTurnHighSampnodes}
 \end{figure}
 \end{center}
@@ -403,6 +469,15 @@ Modeling datasets with sampled ancestors using a non-sampled ancestor model may 
 \frametitle{Conclusions}
 Modeling datasets with sampled ancestors using a non-sampled ancestor model may result in older node ages estimates
 \begin{itemize}
+\item Model parameter estimates (\(\lambda, \mu \) ) are also affected by model misspecification
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Conclusions}
+Modeling datasets with sampled ancestors using a non-sampled ancestor model may result in older node ages estimates
+\begin{itemize}
+\item Model parameter estimates (\(\lambda, \mu \) ) are also affected by model misspecification
 \item The effect increases with the number of sampled ancestors
 \end{itemize}
 \end{frame}
@@ -411,20 +486,16 @@ Modeling datasets with sampled ancestors using a non-sampled ancestor model may 
 \frametitle{Conclusions}
 Modeling datasets with sampled ancestors using a non-sampled ancestor model may result in older node ages estimates
 \begin{itemize}
+\item Model parameter estimates (\(\lambda, \mu \) ) are also affected by model misspecification
 \item The effect increases with the number of sampled ancestors
 \item The presence of sampled ancestors becomes more likely as turnover increases
 \end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{Conclusions}
-Modeling datasets with sampled ancestors using a non-sampled ancestor model may result in older node ages estimates
-\begin{itemize}
-\item The effect increases with the number of sampled ancestors
-\item The presence of sampled ancestors becomes more likely as turnover increases
+\frametitle{Thank You!}
+
 \end{itemize}
-
-
 \end{frame}
 
 
