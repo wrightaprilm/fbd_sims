@@ -13,90 +13,109 @@ def read_in(file):
     extinct_tree = dendropy.Tree.get_from_path(ex_tree, schema="nexus")    
     return(extant_tree, extinct_tree)
 
-def prune_func(tree, rho_val):
+def prune_func(extant_tree, extinct_tree, rho_val):
     prune_labels = []
-    for node in tree.leaf_node_iter():         
+    for node in extant_tree.leaf_node_iter():         
         if str(node.taxon.label).startswith('T'):
-            if random.random() > rho_val:
+            rand = random.random()
+            if rand > float(rho_val):
                 prune_labels.append(node.taxon.label)
-    tree.prune_taxa_with_labels(prune_labels)
-    return(tree)
+    extant_tree.prune_taxa_with_labels(prune_labels)
+    extinct_tree.prune_taxa_with_labels(prune_labels)
+    return(extant_tree, extinct_tree, prune_labels)
 
 def simulate_seq(pruned, file):
-    os.system('seq-gen -mGTR -g4 < $file.pruned > $file.phy')
+    print(file)
+    cmdstring = "seq-gen -mGTR -g4 < %s.pruned > %s.phy" % (file, file)
+    os.system(cmdstring)
+    seqfile = '%s.phy' % file
+    f0 = open(seqfile)
+    lines = f0.readlines()[1:]
+    lines = [line.strip() for line in lines]
+    lines = [str(line.split()[1]) for line in lines]
     dat = dendropy.DnaCharacterMatrix.get_from_path('%s.phy' % file, schema='phylip')
     new_tax = []
-    for taxon in dat.taxon_set:
-        taxon = '<sequence id="seq_%s" taxon="%s" totalcount="4" value="\n' %(taxon, taxon)
-        new_tax.append(taxon)            
-    back = len(dat)*'"/>\n'
-    dat.taxon_namespace=new_tax
-    file='%s.back' % file
-    f=open(file, "w")
-    for x in back:
-        f.write(x)
-    file='%s.dna' % file 
-    f=open(file, "w")   
-    for x in dat:
-        f.write(x)
+    for taxon in dat.taxon_namespace:
+        taxon = "<sequence id='seq_%s' taxon='%s' totalcount='4' value='" %(str(taxon).strip('\''), str(taxon).strip('\''))
+        new_tax.append(str(taxon))            
+    file2='%s.dna' % file 
+    f2=open(file2, "w")   
+    dict={}
+    for name in zip(new_tax, lines):
+    	dict[name[0]] = name[1]
+    for key, val in dict.items():
+        new_line = key+val +"'/>"+'\n'
+        f2.write(new_line)
+    f2.close()
 
-def simulate_morph(pruned, file):
-    md_val = "?"*1000+'"/>'
+def simulate_morph(extinct_tree, file):
+    md_val = "?"*1000+"'/>"
     dict_of_dat = {}
     list_of_names = []
-    for node in pruned.leaf_node_iter():         
+#    print(extinct_tree.taxon_namespace)
+    for node in extinct_tree.leaf_node_iter():         
         if str(node.taxon.label).startswith('X'):
-            list_of_names.append('<sequence id="seq_%s" taxon="%s" totalcount="4" value="' \
-            %(node.taxon.label, node.taxon.label))
-    
+            list_of_names.append("<sequence id='seq_%s' taxon='%s' totalcount='4' value='" \
+            %(str(node.taxon.label).strip('\''), str(node.taxon.label).strip('\'')))
     for name in list_of_names:
         dict_of_dat[name] = md_val
-        
     morph_block = open('%s.morph' % file, "w")
-    for val in dict_of_dat.values():
-        new_line = val + '\n'
+    for key, val in dict_of_dat.items():
+        new_line = key+val + '\n'
         morph_block.write(new_line)
+    morph_block.close()
 
 
 def get_ages(extinct_tree):
     node_ages = []
     ages = extinct_tree.calc_node_ages(ultrametricity_precision=100)
     extinct_tree.calc_node_root_distances()
-
-    rootage = max(ages)
+    rootage = extinct_tree.seed_node.distance_from_tip()
     for node in extinct_tree.leaf_node_iter(): 
         if str(node.taxon.label).startswith('X'):
-            n_string = str(node.taxon.label)+'='+str(rootage - node.root_distance)
-            print(n_string)
-            node_ages.append(n_string)          
+            n_string = str(node.taxon.label)+'='+str(rootage - node.root_distance)+','
+            node_ages.append(n_string) 
+    node_ages[-1] = node_ages[-1].strip(',')                
     return(node_ages, rootage)    
 
-def get_blocks(pruned):
+def get_blocks(pruned_extinct, prune_list):
     sib_list = [] 
-    for node in pruned.leaf_node_iter():
-       val = 1
+    used = []
+    block_list = []    
+    print(prune_list)
+    pruned_extinct.prune_taxa_with_labels(prune_list)
+    val = 1
+    for node in pruned_extinct.leaf_node_iter():
        sibs = node.sibling_nodes()
        for sib in sibs:
            if sib.is_leaf():
-               sib_list.append(sib.taxon.label)
-       new_sibs = set(sib_list)
-       block_list = []
+               sib_list.append(str(sib.taxon.label))
        block_list.append('<distribution id="%s.prior" \
-       spec="beast.math.distributions.MRCAPrior" monophyletic="true" tree="@Tree.t:data \
-       "> <taxonset id="%s" spec="TaxonSet">' %(val, val))
-       for sib in new_sibs:
-            block_list.append('<taxon id="%s" spec="Taxon"/>' % sib)
+       spec="beast.math.distributions.MRCAPrior" monophyletic="true" tree="@Tree.t:data"> \
+      <taxonset id="%s" spec="TaxonSet">' %(val, val))
+       for sib in sib_list:
+           if sib not in prune_list:
+              if sib not in used:
+                 used.append(sib)
+                 block_list.append('<taxon id="%s" spec="Taxon"/>' % sib)
+              elif sib in used:
+                  if sib not in prune_list:
+                      block_list.append('<taxon idref="%s" spec="Taxon"/>' % sib)
        block_list.append('</taxonset></distribution>') 
-       val  =val + 1
+       val = val + 1
     return(block_list)    
 
 def mod_origin(age, file):
     f = open('param.xml')
     red = f.readlines()
-    re.sub('lowerbound', 'age', red)    
-    re.sub('upperbound', str(age + 5), red)    
-    red.write('%s.param' % file)
-
+    file2='%s.param' % file 
+    f2=open(file2, "w")
+    for line in red:
+        line = re.sub('lowerbound', str(age), line)    
+        line = re.sub('upperbound', str(age + 5), line)    
+        f2.write(line)
+    f2.close()
+    
 def write_out(file, pruned, node_ages, blocks):
     print(file)
     pruned.write_to_path('%s.pruned' % file, schema='nexus')
@@ -113,10 +132,11 @@ if __name__ == "__main__":
     file = sys.argv[1]
     rho_val = sys.argv[2]
     extant_tree, extinct_tree = read_in(file)
-    pruned = prune_func(extant_tree, rho_val)
+    pruned, pruned_extinct, prune_list = prune_func(extant_tree, extinct_tree, rho_val)    
     simulate_seq(pruned, file)
-    simulate_morph(pruned, file)
+    simulate_morph(extinct_tree, file)
     node_ages, age = get_ages(extinct_tree)
-    blocks = get_blocks(pruned)
+    blocks = get_blocks(pruned_extinct, prune_list)
+    mod_origin(age, file)
     write_out(file, pruned, node_ages, blocks)
     
